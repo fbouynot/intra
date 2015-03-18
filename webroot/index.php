@@ -4,6 +4,8 @@ define('WEBROOT',dirname(__FILE__));
 define('ROOT',dirname(WEBROOT));
 define('BASE_URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
 
+session_start();
+
 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 {
     if((isset($_POST["userName"]) == true) && (isset($_POST["userPwd"]) == true))
