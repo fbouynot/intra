@@ -1,13 +1,19 @@
-@media screen and (max-width: 480px)
+/* @media screen and (max-width: 480px) */
+
+body 
 {
-    
+    background-color: black;
 }
 
+
+/* != for tablets */
 @media screen and (min-width: 480px) and (max-width: 1024px)
 {
     
 }
 
+
+/* != for computer screens */
 @media screen and (min-width: 1024px)
 {
     

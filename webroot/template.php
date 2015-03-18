@@ -17,11 +17,11 @@
                     ?>
                         <fieldset>
 
-                            <label for="username">Nom</label>
-                            <input id="username" name="username" type="text" placeholder="Nom">
+                            <label for="userName">Identifiant</label>
+                            <input id="userName" name="userName" type="text" placeholder="Identifiant">
             
-                            <label for="userpwd">Compétences</label>
-                            <input id="userpwd" name="userpwd" type="password" placeholder="Compétences">
+                            <label for="userPwd">Mot de passe</label>
+                            <input id="userPwd" name="userPwd" type="password" placeholder="Mot de passe">
             
                             <input type="submit" value="Envoyer">
             
