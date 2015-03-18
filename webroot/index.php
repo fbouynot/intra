@@ -16,7 +16,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         if (@$bd = ldap_bind($ad, $_POST['username'] . "@oiio.loc", $_POST['userpwd']))
         {
             $_SESSION["connected"] = true;
-            $_SESSION["username"] = $_GET["username"];
+            $_SESSION["username"] = $_POST["username"];
         }
         ldap_unbind($ad);
     }

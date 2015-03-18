@@ -13,7 +13,21 @@
             <?php
                 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                 {
-                    echo "<div id='username'>Se connecter</div>";
+                    echo '<form method="post" action="' . BASE_URL . '/" enctype="multipart/form-data">';
+                    ?>
+                        <fieldset>
+
+                            <label for="username">Nom</label>
+                            <input id="username" name="username" type="text" placeholder="Nom">
+            
+                            <label for="userpwd">Compétences</label>
+                            <input id="userpwd" name="userpwd" type="password" placeholder="Compétences">
+            
+                            <input type="submit" value="Envoyer">
+            
+                        </fieldset>
+                    </form>
+                <?php
                 }
                 else
                 {
