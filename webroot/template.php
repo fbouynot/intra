@@ -8,15 +8,25 @@
 		<title>OIIO Formation - Intranet</title>
 	</head>
     <body>
-        <!-- Header -->
         <header>
+            
+            <?php
+                if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
+                {
+                    echo "<div id='username'>Se connecter</div>";
+                }
+                else
+                {
+                    echo "<div id='username'>" . $_SESSION['username'] . "</div>";
+                }
+            ?>
+
         </header>
         
         <?php
             echo $content;
         ?>
         
-        <!-- Footer -->
         <footer>
         </footer>
     </body>

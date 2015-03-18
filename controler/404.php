@@ -1,3 +1,3 @@
 <?php
     
-    include(ROOT . "/view/404.php");
+    include_once(ROOT . "/view/404.php");
