@@ -13,7 +13,7 @@
             <?php
                 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                 {
-                    echo '<form method="post" action="' . BASE_URL . '/" enctype="multipart/form-data">';
+                    echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
                     ?>
                         <fieldset>
 
