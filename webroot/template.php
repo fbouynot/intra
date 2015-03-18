@@ -2,7 +2,9 @@
 <html lang='fr'>
 	<head>
 		<meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="style.css" />
+        <?php
+            echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . '/css/style.css" />';
+        ?>
 		<title>OIIO Formation - Intranet</title>
 	</head>
     <body>
