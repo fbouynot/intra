@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !\.(jpg|png|css|js)$
+RewriteRule (.*) webroot/$1 [L]
