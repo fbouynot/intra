@@ -31,7 +31,7 @@
                 }
                 else
                 {
-                    echo "<div id='username'>" . $_SESSION['username'] . "</div>";
+                    echo "<div id='userName'>" . $_SESSION['userName'] . "</div>";
                 }
             ?>
 
