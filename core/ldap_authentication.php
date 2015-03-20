@@ -13,6 +13,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         {
             $_SESSION["connected"] = true;
             $_SESSION["userName"] = $_POST["userName"];
+            $_SESSION["userPwd"] = $_POST["userPwd"];
         }
         ldap_unbind($ad);
     }
