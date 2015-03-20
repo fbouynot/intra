@@ -32,15 +32,11 @@
                 <li><a href='#'>Connexion</a>
                     <ul>
                         <li id='navConnexionFrame'>
-                        <?php
-                            if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
-                            {
-                                echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
-                                ?>
-                                    <!--fieldset-->
-                                        <label for="userName">Identifiant</label>
-                                        <input id="userName" name="userName" type="text" placeholder="Identifiant">
-=======
+                            <?php
+                                if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
+                                {
+                                    echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
+                            ?>
                             <label for="userName">Identifiant</label>
                             <input id="userName" name="userName" type="text" placeholder="Identifiant">
             
@@ -49,29 +45,18 @@
             
                             <input type="submit" value="Envoyer">
             
-                        </fieldset>
                     </form>
-                <?php
-                }
-                else
-                {
-                    echo "<div id='userName'>" . $_SESSION['userName'] . "</div>";
-                }
-            ?>
-            
-                                    <!--/fieldset-->
-                                </form>
-                            <?php
-                            }
-                            else
-                            {
-                                echo "<div id='username'>" . $_SESSION['username'] . "</div>";
-                            }
-                        ?>
+                    <?php
+                    }
+                    else
+                    {
+                        echo "<div id='userName'>" . $_SESSION['userName'] . "</div>";
+                    }
+                    ?>
                         </li>
                     </ul>
                 </li>
-        </ul>    
+            </ul>    
         </div>
         
         <?php
