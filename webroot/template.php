@@ -10,8 +10,8 @@
     <body>
         <div class="nav">
             <ul>
-                <li><a href='#'>Home</a></li>
-                <li class='active'><a href='#'>Produits</a>
+                <li class="active"><a href='#'>Home</a></li>
+                <li><a href='#'>Produits</a>
                     <ul>
                         <li><a href='#'>Product 1</a>
                             <ul>
