@@ -8,15 +8,39 @@
 		<title>OIIO Formation - Intranet</title>
 	</head>
     <body>
-        <header>
-            
-            <?php
-                if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
-                {
-                    echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
-                    ?>
-                        <fieldset>
-
+        <div class="nav">
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li class='active'><a href='#'>Produits</a>
+                    <ul>
+                        <li><a href='#'>Product 1</a>
+                            <ul>
+                                <li><a href='#'>Sub Product</a></li>
+                                <li><a href='#'>Sub Product</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='#'>Product 2</a>
+                            <ul>
+                                <li><a href='#'>Sub Product</a></li>
+                                <li><a href='#'>Sub Product</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- login form -->
+                <li><a href='#'>Connexion</a>
+                    <ul>
+                        <li id='navConnexionFrame'>
+                        <?php
+                            if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
+                            {
+                                echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
+                                ?>
+                                    <!--fieldset-->
+                                        <label for="userName">Identifiant</label>
+                                        <input id="userName" name="userName" type="text" placeholder="Identifiant">
+=======
                             <label for="userName">Identifiant</label>
                             <input id="userName" name="userName" type="text" placeholder="Identifiant">
             
@@ -34,8 +58,21 @@
                     echo "<div id='userName'>" . $_SESSION['userName'] . "</div>";
                 }
             ?>
-
-        </header>
+            
+                                    <!--/fieldset-->
+                                </form>
+                            <?php
+                            }
+                            else
+                            {
+                                echo "<div id='username'>" . $_SESSION['username'] . "</div>";
+                            }
+                        ?>
+                        </li>
+                    </ul>
+                </li>
+        </ul>    
+        </div>
         
         <?php
             echo $content;
