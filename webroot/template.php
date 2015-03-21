@@ -8,7 +8,7 @@
 		<title>OIIO Formation - Intranet</title>
 	</head>
     <body>
-        <div class="nav">
+        <nav>
             <ul>
                 <li class="active"><a href='#'>Home</a></li>
                 <li><a href='#'>Produits</a>
@@ -31,7 +31,7 @@
                 <!-- login form -->
                 <li><a href='#'>Connexion</a>
                     <ul>
-                        <li id='navConnexionFrame'>
+                        <li>
                             <?php
                                 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                                 {
@@ -64,15 +64,18 @@
                     </ul>
                 </li>
             </ul>    
-        </div>
+        </nav>
 
-        <section>
+        <!--section-->
             <?php
                 echo $content;
             ?>
-        </section>
+        <!--/section-->
         
         <footer>
+            <a href="http://blog.oiioformation.fr">Blog AMA</a>
+            <a href="http://deesweb.oiioformation.fr">DEES Web</a>
+            <a href="http://www.oiioformation.fr">OIIO Formation</a>
         </footer>
     </body>
     <script src="<?php echo BASE_URL;?>/js/jquery-2.1.3.min.js"></script>

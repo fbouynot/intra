@@ -1,2 +1,2 @@
 <?php
-    echo "<section><p>Hello world !</p></section>";
+    echo "<p>Hello world !</p>";
