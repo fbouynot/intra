@@ -66,11 +66,11 @@
             </ul>    
         </nav>
 
-        <!--section-->
+        <section>
             <?php
                 echo $content;
             ?>
-        <!--/section-->
+        </section>
         
         <footer>
             <a href="http://blog.oiioformation.fr">Blog AMA</a>
