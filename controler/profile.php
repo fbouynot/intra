@@ -11,8 +11,8 @@
         changePwd($_POST['userPwd'],$_POST['newPwd'],$_POST['verifPwd']);
     }
 
-    $sn = $result[0]['sn'][0];
+    @$sn = $result[0]['sn'][0];
     $givenName = $result[0]['givenname'][0];
-    $mail = $result[0]['mail'][0];
+    @$mail = $result[0]['mail'][0];
 
     include_once(ROOT . "/view/profile.php");

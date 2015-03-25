@@ -1,7 +1,7 @@
 <?php
 
     $dn = "OU=RH,DC=oiio,DC=loc";
-    $filter = "(sAMAccountName=fbouynot)";
+    $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
     $attr = array("mail", "sn", "givenname", "samaccountname");
     $ad = ldap_connect("ldap://cd2.oiio.loc") or die("Couldn't connect to AD!");
     ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
@@ -16,7 +16,7 @@
     function changePwd($oldPwd, $newPwd, $verifPwd)
     {
         $dn = "OU=RH,DC=oiio,DC=loc";
-        $filter = "(sAMAccountName=fbouynot)";
+        $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
         $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Couldn't connect to AD!");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
@@ -55,14 +55,16 @@
                 return false;
             }
             else
-            {
-                /*$entry = array();
-                $entry["userPassword"] = "{SHA}" . base64_encode(pack("H*", sha1($newPwd)));
+            {       
+                    /* Ce qu'on essaie de faire :
+                    Modifier le champ unicodepwd (et non userpwd)
+                    D'abord le supprimer, puis le recreer, car la modification est réservée aux admins
+                    Mdp doit être entre double quotes
+                    Mdp (quote comprises) doivent être converties en utf-16LE
+                    gl&hf */
                 
-                function adifyPw($pw)
-                {
-                     return iconv("UTF-8", "UTF-16LE", '"' . $pw . '"');
-                }*/
+                
+                /* ---------------- Essai 1 ---------------------------- */
 
                 $entry = array(
                     array(
@@ -84,7 +86,33 @@
                 else
                 {
                     echo "Votre mot de passe a été changé.";
+                    $_SESSION['userPwd'] = $newPwd;
+                }/*
+                
+                ----------------- Essai 2 -------------------------------------
+                
+                // set password .. not sure if I need to base64 encode or not
+                $mdpreset='"'.$newPwd.'"'; 
+                $userdata["unicodepwd"] = iconv( 'UTF-8', 'UTF-16LE', $mdpreset );
+                $encodedPass = array('unicodepwd' => $userdata["unicodepwd"]);
+                //$encodedPass = array('unicodepwd' => $newPwd);
+
+                echo "Change password ";
+                if(ldap_mod_replace ($ad, $dn, $encodedPass)){ 
+                    echo "succeded";
+                }else{
+                    echo "failed";
                 }
+                
+                ------------- Essai 3 -------------------------------------
+                
+                $mdpreset='"'.$newPwd.'"';
+                $userdata["unicodepwd"] = iconv( 'UTF-8', 'UTF-16LE', $mdpreset );
+
+                if(!(ldap_mod_replace ($ad, $dn, $userdata))) echo("Echec : Impossible de changer le mot de passe");*/
+                
+                
+                /* fin de la partie de test */
             }       
             ldap_unbind($ad);        
         }
