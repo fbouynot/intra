@@ -62,9 +62,6 @@
                     Mdp doit être entre double quotes
                     Mdp (quote comprises) doivent être converties en utf-16LE
                     gl&hf */
-                
-                
-                /* ---------------- Essai 1 ---------------------------- */
 
                 $entry = array(
                     array(
@@ -87,32 +84,7 @@
                 {
                     echo "Votre mot de passe a été changé.";
                     $_SESSION['userPwd'] = $newPwd;
-                }/*
-                
-                ----------------- Essai 2 -------------------------------------
-                
-                // set password .. not sure if I need to base64 encode or not
-                $mdpreset='"'.$newPwd.'"'; 
-                $userdata["unicodepwd"] = iconv( 'UTF-8', 'UTF-16LE', $mdpreset );
-                $encodedPass = array('unicodepwd' => $userdata["unicodepwd"]);
-                //$encodedPass = array('unicodepwd' => $newPwd);
-
-                echo "Change password ";
-                if(ldap_mod_replace ($ad, $dn, $encodedPass)){ 
-                    echo "succeded";
-                }else{
-                    echo "failed";
                 }
-                
-                ------------- Essai 3 -------------------------------------
-                
-                $mdpreset='"'.$newPwd.'"';
-                $userdata["unicodepwd"] = iconv( 'UTF-8', 'UTF-16LE', $mdpreset );
-
-                if(!(ldap_mod_replace ($ad, $dn, $userdata))) echo("Echec : Impossible de changer le mot de passe");*/
-                
-                
-                /* fin de la partie de test */
             }       
             ldap_unbind($ad);        
         }
