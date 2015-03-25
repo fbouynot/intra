@@ -35,7 +35,14 @@
                             <?php
                                 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                                 {
-                                    echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
+                                    if ($_GET['p'] == "index")
+                                    {
+                                        echo '<form method="post" action="' . BASE_URL . '/" enctype="multipart/form-data">';
+                                    }
+                                    else
+                                    {
+                                        echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
+                                    }
                             ?>
                             <label for="userName">Identifiant</label>
                             <input id="userName" name="userName" type="text" placeholder="Identifiant">
@@ -58,10 +65,12 @@
                 </li>
             </ul>    
         </div>
-        
-        <?php
-            echo $content;
-        ?>
+
+        <section>
+            <?php
+                echo $content;
+            ?>
+        </section>
         
         <footer>
         </footer>
