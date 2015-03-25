@@ -75,5 +75,5 @@
         <footer>
         </footer>
     </body>
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="<?php echo BASE_URL;?>/js/jquery-2.1.3.min.js"></script>
 </html>
