@@ -56,7 +56,7 @@
             }
             else
             {       
-                    /* Ce qu'on essaie de faire :
+                    /* Ce qu'on essaie de faire (mais on y arrive pas) :
                     Modifier le champ unicodepwd (et non userpwd)
                     D'abord le supprimer, puis le recreer, car la modification est réservée aux admins
                     Mdp doit être entre double quotes
@@ -95,4 +95,17 @@
         
     }
 
-// Récupérer pwdcount --> Vérifier PwdCount --> Vérifier mdp (, majuscules / minuscules / chiffres / confirmation) --> Définir mot de passe 
+    function changeMail ($newMail)
+    {
+        $dn = "OU=RH,DC=oiio,DC=loc";
+        $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
+        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Couldn't connect to AD!");
+        ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
+        if ($bd = @ldap_bind($ad, $_SESSION['userName'] . "@oiio.loc", $_SESSION['userPwd']))
+        {
+            $result = ldap_search($ad,$dn,$filter/*,array("mail")*/) or die ("Erreur de recherche  : " . ldap_error($ad));
+            $result = ldap_get_entries($ad, $result);
+            var_dump($result);
+        }
+    }
