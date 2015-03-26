@@ -10,7 +10,7 @@ else
     include_once(ROOT . "/model/profile.php");
     if (isset($_POST['userMail']) && !($_POST['userMail'] == ""))
     {
-        changeMail("coucou@lala.com");
+        changeMail($_POST['userMail']);
     }
     if (isset($_POST['userPwd']) && isset($_POST['newPwd']) && isset($_POST['verifPwd']) && !($_POST['userPwd'] == "") && !($_POST['newPwd'] == "") && !($_POST['verifPwd'] == ""))
     {
