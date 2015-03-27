@@ -55,14 +55,7 @@
                 return false;
             }
             else
-            {       
-                    /* Ce qu'on essaie de faire (mais on y arrive pas) :
-                    Modifier le champ unicodepwd (et non userpwd)
-                    D'abord le supprimer, puis le recreer, car la modification est réservée aux admins
-                    Mdp doit être entre double quotes
-                    Mdp (quote comprises) doivent être converties en utf-16LE
-                    gl&hf */
-
+            {
                 $entry = array(
                     array(
                         "attrib"  => "unicodePwd",
@@ -114,15 +107,15 @@
             $result = ldap_search($ad,$dn,$filter,array("mail")) or die ("Erreur de recherche  : " . ldap_error($ad));
             $result = ldap_get_entries($ad, $result);
             var_dump($result[0]['mail'][0]);
-            $entry = array(
+            $entry = array(/*
             array(
                 "attrib"  => "mail",
                 "modtype" => LDAP_MODIFY_BATCH_REMOVE,
                 "values"  => array('"' . $result[0]['mail'][0] . '"')
-                ),
+                ),*/
             array(
                 "attrib"  => "mail",
-                "modtype" => LDAP_MODIFY_BATCH_ADD,
+                "modtype" => LDAP_MODIFY_BATCH_REPLACE,
                 "values"  => array('"' . $newMail . '"')
                 )
             );
