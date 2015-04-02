@@ -1,0 +1,10 @@
+Demander email (formulaire).
+Récupérer email ($POST).
+Vérifier si l'email est dans la db.
+Générer un jeton de réinitialisation avec le mail, le nom d'utilisateur, et le timestamp.
+Ajouter le token de réinitialisation dans la db.
+Envoyer un email de réinitialisation du mdp avec le token en $GET.
+Si la page est visitée et le $GET contient un jeton de reinitialisation valide, proposer la réinitialisation du mot de passe.
+Réinitialiser le mot de passe.
+Supprimer le jeton.
+
