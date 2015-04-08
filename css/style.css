@@ -87,6 +87,7 @@ nav form
     color: #CF0C0C;
 }
 
+
 /*label
 {
     padding: 1em;
@@ -134,6 +135,13 @@ footer a
 /* != for computer screens */
 @media screen and (min-width: 1024px)
 {
+    h3
+    {
+        color: #CF0C0C;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
     nav li
     {
         width: 130px;
