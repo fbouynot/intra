@@ -57,13 +57,13 @@ nav a
 
 nav a:hover
 {
-    background-color: #999966;
+    background-color: #fff;
 }
 
 nav a.active
 {
-    background-color: #aaa;
-    color: #444;
+    background-color: #fff;
+    color: #CF0C0C;
     cursor: default;
 }
 
@@ -76,14 +76,15 @@ nav li li
 /* Connexion form&fildset */
 #navConnexionFrame
 {
-    background-color: #5D472C;
+    background-color: #fff;
 }
 
 form
 {
     border-style: none;
-    background-color: #5D472C;
+    background-color: #fff;
     text-align: center;
+    color: #CF0C0C;
 }
 
 /*label
