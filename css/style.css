@@ -79,7 +79,7 @@ nav li li
     background-color: #fff;
 }
 
-form
+nav form
 {
     border-style: none;
     background-color: #fff;
@@ -94,7 +94,7 @@ form
     display: inline-block;
 }*/
 
-input
+nav input
 {
     /*position: absolute;*/
     /*margin-top: 50px;*/
@@ -124,7 +124,7 @@ footer
 footer a
 {
     font-size: .8em;
-    font-family: "Oswald", sans-serif;
+    font-family: sans-serif;
     color: #CF0C0C;
     display: inline-block;
     text-decoration: none;
