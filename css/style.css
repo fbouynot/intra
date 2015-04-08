@@ -22,7 +22,7 @@ body
 
 nav
 {
-    box-shadow: 0px 4px 5px 0px #656565;
+    /*box-shadow: 0px 4px 5px 0px #656565;*/
     position: fixed;
     top: 0;
     width: 100%;
@@ -31,7 +31,7 @@ nav
 nav ul
 {
     list-style: none;
-    background-color: #5D472C; /* Former #444 */
+    background-color: #FFF; /* Former #444 */
     text-align: center;
     padding: 0;
     margin: 0;
@@ -39,7 +39,7 @@ nav ul
 
 nav li
 {
-    font-family: 'Oswald', sans-serif;
+    font-family: sans-serif;
     font-size: 1.2em;
     line-height: 40px;
     text-align: left;
@@ -48,7 +48,7 @@ nav li
 nav a
 {
     text-decoration: none;
-    color: #fff;
+    color: #CF0C0C;
     display: block;
     padding-left: 15px;
     border-bottom: 1px solid #888;
@@ -97,7 +97,7 @@ input
 {
     /*position: absolute;*/
     /*margin-top: 50px;*/
-    /*width: 95%;*/
+    width: 95%;
 }
 
 /*fieldset
@@ -115,7 +115,7 @@ footer
     position: absolute;
     bottom: 0;
     text-align: center;
-    background-color: #5D472C;
+    background-color: #FFF;
     width: 100%;
     line-height: 30px;
 }
@@ -124,7 +124,7 @@ footer a
 {
     font-size: .8em;
     font-family: "Oswald", sans-serif;
-    color: #FFF;
+    color: #CF0C0C;
     display: inline-block;
     text-decoration: none;
     padding-left: 1em;

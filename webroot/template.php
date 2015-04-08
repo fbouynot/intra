@@ -49,7 +49,7 @@
                                 else
                                 {
                             ?>
-                            <form method="post" action="<?php echo BASE_URL . '/' . $_GET['p'];?>" enctype="multipart/form-data">';
+                            <form method="post" action="<?php echo BASE_URL . '/' . $_GET['p'];?>" enctype="multipart/form-data">
                             <?php
                                 }
                             ?>
