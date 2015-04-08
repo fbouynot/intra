@@ -23,7 +23,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
             
             @$_SESSION['sn'] = $result[0]['sn'][0];
             $_SESSION['givenName'] = $result[0]['givenname'][0];
-            @$_SESSION['mail'] = $result[0]['mail'][0];
+            @$_SESSION['userMail'] = $result[0]['mail'][0];
             $_SESSION["connected"] = true;
             $_SESSION["userName"] = $_POST["userName"];
             $_SESSION["userPwd"] = $_POST["userPwd"];

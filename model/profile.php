@@ -1,23 +1,5 @@
 <?php
 
-    /* On se connecte à l'AD avec les accréditations de l'utilisateur pour récupérer son mail, prénom, nom, et login. */
-    /* Racine de la recherche */
-    $dn = "OU=RH,DC=oiio,DC=loc";
-    /* L'objet recherché : l'utiisateur */
-    $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
-    /* Les attributs recherchés : mail, prenom, nom de famille, login */
-    $attr = array("mail", "sn", "givenname", "samaccountname");
-    /* Contact de l'AD */
-    $ad = ldap_connect("ldap://cd2.oiio.loc") or die("Couldn't connect to AD!");
-    ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
-    ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
-    if ($bd = @ldap_bind($ad, $_SESSION['userName'] . "@oiio.loc", $_SESSION['userPwd']))
-    {
-        $result = ldap_search($ad,$dn,$filter,$attr) or die ("Erreur de recherche  : " . ldap_error($ad));
-        $result = ldap_get_entries($ad, $result);
-    }
-    ldap_unbind($ad);
-
     function changePwd($oldPwd, $newPwd, $verifPwd)
     {
         $dn = "OU=RH,DC=oiio,DC=loc";
