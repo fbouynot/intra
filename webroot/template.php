@@ -13,23 +13,8 @@
     <body>
         <nav>
             <ul>
-                <li class="active"><a href='<?php echo BASE_URL;?>/'>Home</a></li>
-                <li><a href='#'>Produits</a>
-                    <ul>
-                        <li><a href='#'>Product 1</a>
-                            <ul>
-                                <li><a href='#'>Sub Product</a></li>
-                                <li><a href='#'>Sub Product</a></li>
-                            </ul>
-                        </li>
-                        <li><a href='#'>Product 2</a>
-                            <ul>
-                                <li><a href='#'>Sub Product</a></li>
-                                <li><a href='#'>Sub Product</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li class="active"><a href='<?php echo BASE_URL;?>/'>Accueil</a></li>
+                <li><a href='#'>CV</a></li>
                 
                 <!-- Si l'utilisateur n'est pas connecté, on lui propose un formulaire de connexion, sinon on lui affiche un menu personnel -->
                 <?php
@@ -37,8 +22,6 @@
                     {
                 ?>
                 <li><a href='#'>Connexion</a>
-                    <ul>
-                        <li>
                             <?php
                                 if ($_GET['p'] == "index")
                                 {

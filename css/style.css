@@ -48,7 +48,7 @@ nav li
 nav a
 {
     text-decoration: none;
-    color: #CF0C0C;
+    color: #AA1922;
     display: block;
     padding-left: 15px;
     border-bottom: 1px solid #888;
@@ -63,7 +63,7 @@ nav a:hover
 nav a.active
 {
     background-color: #fff;
-    color: #CF0C0C;
+    color: #AA1922;
     cursor: default;
 }
 
@@ -84,7 +84,7 @@ nav form
     border-style: none;
     background-color: #fff;
     text-align: center;
-    color: #CF0C0C;
+    color: #AA1922;
 }
 
 
@@ -126,7 +126,7 @@ footer a
 {
     font-size: .8em;
     font-family: sans-serif;
-    color: #CF0C0C;
+    color: #AA1922;
     display: inline-block;
     text-decoration: none;
     padding-left: 1em;
@@ -137,7 +137,7 @@ footer a
 {
     h3
     {
-        color: #CF0C0C;
+        color: #AA1922;
         font-family: sans-serif;
         font-weight: 100;
     }
