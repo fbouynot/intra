@@ -16,7 +16,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background: #ccc;
+    background: #FFF;
     min-height: 100%;
 }
 
@@ -31,7 +31,7 @@ nav
 nav ul
 {
     list-style: none;
-    background-color: #444;
+    background-color: #5D472C; /* Former #444 */
     text-align: center;
     padding: 0;
     margin: 0;
@@ -57,14 +57,14 @@ nav a
 
 nav a:hover
 {
-    background-color: #005f5f;
+    background-color: #999966;
 }
 
 nav a.active
 {
     background-color: #aaa;
     color: #444;
-    cursor: default; /* Comment that */
+    cursor: default;
 }
 
 /* Sub Menus */
@@ -76,31 +76,31 @@ nav li li
 /* Connexion form&fildset */
 #navConnexionFrame
 {
-    background-color: #444;
+    background-color: #5D472C;
 }
 
 form
 {
     border-style: none;
-    background-color: #444;
+    background-color: #5D472C;
     text-align: center;
 }
 
 /*label
 {
-   /* padding: 1em;
+    padding: 1em;
     position: absolute;
     display: inline-block;
-}
+}*/
 
 input
 {
-    position: absolute;
-    margin-top: 50px;
-    display: inline-block;
+    /*position: absolute;*/
+    /*margin-top: 50px;*/
+    width: 95%;
 }
 
-fieldset
+/*fieldset
 {
     background-color: #444;
 }*/
@@ -115,7 +115,7 @@ footer
     position: absolute;
     bottom: 0;
     text-align: center;
-    background-color: #444;
+    background-color: #5D472C;
     width: 100%;
     line-height: 30px;
 }

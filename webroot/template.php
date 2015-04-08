@@ -70,7 +70,7 @@
                     else
                     {
                 ?>
-                <li><a href='#'><?php echo $_SESSION['userName'];?></a>
+                <li><a href='#'><?php echo $_SESSION['givenName'];?></a>
                     <ul>
                         <li>
                             <div id='userName'><a href="<?php echo BASE_URL . '/profile'?>">Mon profil</a></div>";
