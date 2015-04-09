@@ -3,7 +3,7 @@
     <fieldset>
 
         <label for="userMail">Mail</label>
-        <input id="userMail" name="userMail" type="text" value=<?php echo $_SESSION['mail'];?>>
+        <input id="userMail" name="userMail" type="text" value=<?php echo $_SESSION['userMail'];?>>
 
         <input type="submit" value="Envoyer">
         
