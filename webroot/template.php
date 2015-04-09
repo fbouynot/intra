@@ -73,7 +73,7 @@
                 <li><a href='#'><?php echo $_SESSION['userName'];?></a>
                     <ul>
                         <li>
-                            <div id='userName'>Mon profil</div>";
+                            <div id='userName'><a href="<?php echo BASE_URL . '/profile'?>">Mon profil</a></div>";
                         </li>
                     </ul>
                 </li>
