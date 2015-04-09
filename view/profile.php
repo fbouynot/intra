@@ -1,3 +1,4 @@
+<!-- Formulaire de changement d'adresse mail -->
 <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
     <fieldset>
 
@@ -9,6 +10,7 @@
     </fieldset>
 </form>
   
+<!-- Formulaire de changement de mot de passe -->
 <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
 
     <fieldset>

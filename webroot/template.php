@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang='fr'>
 	<head>
+        <!-- Pour les besoins du responsive, on définit le nombre de pixels utilisés comme ceux du téléphone et non le nombre de pixels virtuels qu'il déclare.
+            Pour la même raison, on demande d'être en zoom x1 au chargement de la page. -->
 		<meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
             echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . '/css/style.css" />';
@@ -28,21 +30,28 @@
                     </ul>
                 </li>
                 
-                <!-- login form -->
+                <!-- Si l'utilisateur n'est pas connecté, on lui propose un formulaire de connexion, sinon on lui affiche un menu personnel -->
+                <?php
+                    if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
+                    {
+                ?>
                 <li><a href='#'>Connexion</a>
                     <ul>
                         <li>
                             <?php
-                                if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
+                                if ($_GET['p'] == "index")
                                 {
-                                    if ($_GET['p'] == "index")
-                                    {
-                                        echo '<form method="post" action="' . BASE_URL . '/" enctype="multipart/form-data">';
-                                    }
-                                    else
-                                    {
-                                        echo '<form method="post" action="' . BASE_URL . '/' . $_GET['p'] . '" enctype="multipart/form-data">';
-                                    }
+                            ?>
+                            <!-- Formulaire de connexion -->
+                            <form method="post" action="<?php echo BASE_URL;?>/" enctype="multipart/form-data">
+                            <?php
+                                }
+                                else
+                                {
+                            ?>
+                            <form method="post" action="<?php echo BASE_URL . '/' . $_GET['p'];?>" enctype="multipart/form-data">';
+                            <?php
+                                }
                             ?>
                             <label for="userName">Identifiant</label>
                             <input id="userName" name="userName" type="text" placeholder="Identifiant">
@@ -52,18 +61,26 @@
             
                             <input type="submit" value="Envoyer">
             
-                    </form>
-                    <?php
-                    }
-                    else
-                    {
-                        echo "<div id='userName'>" . $_SESSION['userName'] . "</div>";
-                    }
-                    ?>
+                            </form>
                         </li>
                     </ul>
                 </li>
-            </ul>    
+                <?php
+                    }
+                    else
+                    {
+                ?>
+                <li><a href='#'><?php echo $_SESSION['userName'];?></a>
+                    <ul>
+                        <li>
+                            <div id='userName'>Mon profil</div>";
+                        </li>
+                    </ul>
+                </li>
+                 <?php       
+                    }
+                ?>
+            </ul>
         </nav>
 
         <section>
