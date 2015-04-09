@@ -12,7 +12,7 @@
     <body>
         <nav>
             <ul>
-                <li class="active"><a href='#'>Home</a></li>
+                <li class="active"><a href='<?php echo BASE_URL;?>/'>Home</a></li>
                 <li><a href='#'>Produits</a>
                     <ul>
                         <li><a href='#'>Product 1</a>
