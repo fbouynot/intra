@@ -53,13 +53,13 @@
                             <?php
                                 }
                             ?>
-                            <label for="userName">Identifiant</label>
-                            <input id="userName" name="userName" type="text" placeholder="Identifiant">
+                                <label for="userName">Identifiant</label>
+                                <input id="userName" name="userName" type="text" placeholder="Identifiant">
             
-                            <label for="userPwd">Mot de passe</label>
-                            <input id="userPwd" name="userPwd" type="password" placeholder="Mot de passe">
+                                <label for="userPwd">Mot de passe</label>
+                                <input id="userPwd" name="userPwd" type="password" placeholder="Mot de passe">
             
-                            <input type="submit" value="Envoyer">
+                                <input type="submit" value="Envoyer">
             
                             </form>
                         </li>
@@ -73,7 +73,7 @@
                 <li><a href='#'><?php echo $_SESSION['givenName'];?></a>
                     <ul>
                         <li>
-                            <div id='userName'><a href="<?php echo BASE_URL . '/profile'?>">Mon profil</a></div>";
+                            <div id='userName'><a href="<?php echo BASE_URL . '/profile'?>">Mon profil</a></div>
                         </li>
                     </ul>
                 </li>
