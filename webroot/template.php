@@ -21,47 +21,15 @@
                     if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                     {
                 ?>
-                <li><a href='#'>Connexion</a>
-                            <?php
-                                if ($_GET['p'] == "index")
-                                {
-                            ?>
-                            <!-- Formulaire de connexion -->
-                            <form method="post" action="<?php echo BASE_URL;?>/" enctype="multipart/form-data">
-                            <?php
-                                }
-                                else
-                                {
-                            ?>
-                            <form method="post" action="<?php echo BASE_URL . '/' . $_GET['p'];?>" enctype="multipart/form-data">
-                            <?php
-                                }
-                            ?>
-                                <label for="userName">Identifiant</label>
-                                <input id="userName" name="userName" type="text" placeholder="Identifiant">
-            
-                                <label for="userPwd">Mot de passe</label>
-                                <input id="userPwd" name="userPwd" type="password" placeholder="Mot de passe">
-            
-                                <input type="submit" value="Envoyer">
-            
-                            </form>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href='<?php echo BASE_URL . "/login";?>'>Connexion</a></li>
+                          
                 <?php
                     }
                     else
                     {
                 ?>
-                <li><a href='#'><?php echo $_SESSION['givenName'];?></a>
-                    <ul>
-                        <li>
-                            <div id='userName'><a href="<?php echo BASE_URL . '/profile'?>">Mon profil</a></div>
-                        </li>
-                    </ul>
-                </li>
-                 <?php       
+                <li><a href='<?php echo BASE_URL . "/profile";?>'><?php echo $_SESSION['givenName'];?></a></li>
+                <?php       
                     }
                 ?>
             </ul>
