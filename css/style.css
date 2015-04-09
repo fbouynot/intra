@@ -116,26 +116,63 @@ footer a
 /* Login */
 .login
 {
-    
+    text-align: right;
+    font-size: 85%;
 }
 
 .login button
 {
-    
+    background-color: #AA1922;
+    color: #FFF;
+    transition: .2s background-color;
+    width: 100%;
+    border: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    box-shadow:  0px 0px 0px 1px #AA1922;
+    line-height: 2;
+}
+
+.login button:hover
+{
+    background-color: #AA1915;
 }
 
 .login a
 {
-    background-color: #AA1922;
+    color: #AA1922;
     text-decoration: none;
-    color: #FFF;
-    transition: .2s background-color;
-    padding: .1em;
+    transition: .2s color;
 }
 
 .login a:hover
 {
-    background-color: #AA1963;
+    
+}
+
+.login table
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+#forgotten_id
+{
+    text-align: left;
+}
+
+.login input
+{
+    width: 100%;
+    padding: 0;
+    line-height: 2;
+}
+
+.login td
+{
+    padding: .3em;
+    
 }
 
 /* /Login */
@@ -144,10 +181,18 @@ footer a
 @media screen and (min-width: 1024px)
 {
     /* Template */
+    h2
+    {
+        text-transform: uppercase;
+        color: black;
+        font-weight: 100;
+        font-size: 200%;
+        
+    }
+    
     h3
     {
         color: #AA1922;
-        font-family: sans-serif;
         font-weight: 100;
     }
     
@@ -178,6 +223,19 @@ footer a
         padding-left: 0;
     }
     /* /nav style */
-    
     /* /Template */
+    
+    /* Login */
+    .login
+    {
+        margin-top: 10%;
+    }
+
+    .login h2
+    {
+        text-align: justify;
+        margin-left: 30%;
+    }
+    
+    /* /Login */
 }
