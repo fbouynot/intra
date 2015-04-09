@@ -1,11 +1,4 @@
-/* Get Oswald font */
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2'), url(http://fonts.gstatic.com/s/oswald/v10/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
-}
-
+/* Template */
 html
 {
     height: 100%;
@@ -14,6 +7,7 @@ html
 /* @media screen and (max-width: 480px) */
 body
 {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     background: #FFF;
@@ -31,7 +25,7 @@ nav
 nav ul
 {
     list-style: none;
-    background-color: #FFF; /* Former #444 */
+    background-color: #FFF;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -87,25 +81,10 @@ nav form
     color: #AA1922;
 }
 
-
-/*label
-{
-    padding: 1em;
-    position: absolute;
-    display: inline-block;
-}*/
-
 nav input
 {
-    /*position: absolute;*/
-    /*margin-top: 50px;*/
     width: 95%;
 }
-
-/*fieldset
-{
-    background-color: #444;
-}*/
 
 section
 {
@@ -132,9 +111,39 @@ footer a
     padding-left: 1em;
 }
 
+/* /Template */
+
+/* Login */
+.login
+{
+    
+}
+
+.login button
+{
+    
+}
+
+.login a
+{
+    background-color: #AA1922;
+    text-decoration: none;
+    color: #FFF;
+    transition: .2s background-color;
+    padding: .1em;
+}
+
+.login a:hover
+{
+    background-color: #AA1963;
+}
+
+/* /Login */
+
 /* != for computer screens */
 @media screen and (min-width: 1024px)
 {
+    /* Template */
     h3
     {
         color: #AA1922;
@@ -142,6 +151,7 @@ footer a
         font-weight: 100;
     }
     
+    /* nav style */
     nav li
     {
         width: 130px;
@@ -167,22 +177,7 @@ footer a
     {
         padding-left: 0;
     }
+    /* /nav style */
     
-    /* Sub menus */
-    nav li ul
-    {
-        position: absolute;
-        display: none;
-        width: inherit;
-    }
-    
-    nav li:hover ul
-    {
-        display: block;
-    }
-    
-    nav li ul li
-    {
-        display: block;
-    }
+    /* /Template */
 }
