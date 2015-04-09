@@ -1,5 +1,5 @@
 <!-- Formulaire de connexion -->
-<form method="post" action="<?php echo BASE_URL;?>/login" enctype="multipart/form-data">';
+<form method="post" action="<?php echo BASE_URL;?>/login" enctype="multipart/form-data">
     <fieldset>
         <label for="userName">Nom d'utilisateur</label>
         <input id="userName" name="userName">
