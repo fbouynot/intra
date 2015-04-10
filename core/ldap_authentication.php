@@ -9,14 +9,14 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         $dn = "OU=RH,DC=oiio,DC=loc";
         /* Ce que l'on cherche */
         $filter = "(sAMAccountName=" . $_POST['userName'] . ")";
-        /* Les attributs recherchés : mail, prenom, nom de famille, login */
+        /* Les attributs recherchés : mail, nom, prenom, login */
         $attr = array("mail", "sn", "givenname", "samaccountname");
-        /* Contact de l'AD */
-        $ad = ldap_connect("ldap://cd2.oiio.loc") or die("Couldn't connect to AD!");
+        /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
+        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
         /* Connexion à l'AD avec les identifiants de l'utilisateur. Si c'est accepté, on connecte l'utilsateur. */
-        if (@$bd = ldap_bind($ad, $_POST['userName'] . "@oiio.loc", $_POST['userPwd']))
+        if ($bd = ldap_bind($ad, $_POST['userName'] . "@oiio.loc", $_POST['userPwd']))
         {
             $result = ldap_search($ad,$dn,$filter,$attr) or die ("Erreur de recherche  : " . ldap_error($ad));
             $result = ldap_get_entries($ad, $result);
@@ -28,6 +28,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
             $_SESSION["userName"] = $_POST["userName"];
             $_SESSION["userPwd"] = $_POST["userPwd"];
         }
+        var_dump($bd);
         /* Deconnexion de l'AD. */
         ldap_unbind($ad);
     }

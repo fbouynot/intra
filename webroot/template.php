@@ -16,8 +16,8 @@
                 <li class="active"><a href='<?php echo BASE_URL;?>/'>Accueil</a></li>
                 <li><a href='#'>CV</a></li>
                 
-                <!-- Si l'utilisateur n'est pas connecté, on lui propose un formulaire de connexion, sinon on lui affiche un menu personnel -->
                 <?php
+                    /*  Si l'utilisateur n'est pas connecté, on lui propose un formulaire de connexion, sinon on lui affiche un menu personnel */
                     if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
                     {
                 ?>
