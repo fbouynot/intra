@@ -116,6 +116,7 @@ footer a
 /* Login */
 .login
 {
+    font-family: 'Abel', sans-serif;
     text-align: right;
     font-size: 85%;
 }
