@@ -131,6 +131,8 @@ footer a
     text-transform: uppercase;
     box-shadow:  0px 0px 0px 1px #AA1922;
     line-height: 2;
+    
+    padding-left: 5px; /* WIP */
 }
 
 .login button:hover
@@ -167,6 +169,11 @@ footer a
     width: 100%;
     padding: 0;
     line-height: 2;
+    background-color: #FFF, !important;
+    
+    /* WIP */
+    padding-left: 5px;
+    /* /WIP */
 }
 
 .login td
@@ -228,7 +235,7 @@ footer a
     /* Login */
     .login
     {
-        margin-top: 10%;
+        margin-top: 15%;
     }
 
     .login h2
