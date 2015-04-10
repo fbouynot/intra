@@ -8,6 +8,9 @@
             echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . '/css/style.css" />';
             echo '<link type="image/x-icon" href="' . BASE_URL . '/img/favico.ico" rel="shortcut icon" />';
         ?>
+        <!--Cette partie sera supprimée-->
+        <link href='http://fonts.googleapis.com/css?family=Abel|Poiret+One' rel='stylesheet' type='text/css'>
+        <!--/ Cette partie sera supprimée-->
 		<title>OIIO Formation - Intranet</title>
 	</head>
     <body>

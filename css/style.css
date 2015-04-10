@@ -169,7 +169,7 @@ footer a
     width: 100%;
     padding: 0;
     line-height: 2;
-    background-color: #FFF, !important;
+    background-color: #FFF !important;
     
     /* WIP */
     padding-left: 5px;
@@ -190,6 +190,7 @@ footer a
     /* Template */
     h2
     {
+        font-family: 'Abel', sans-serif;
         text-transform: uppercase;
         color: black;
         font-weight: 100;
@@ -245,4 +246,60 @@ footer a
     }
     
     /* /Login */
+    /* Profil */
+    
+    .d_box /* display box for the profil page */
+    {
+        width: 800px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .d_box_row /* each line of the display box */
+    {
+        display: block;
+        padding: 50px;
+    }
+    
+    .field-name
+    {
+        font-family: 'Abel', sans-serif;
+        text-transform: uppercase;
+        font-size: 100%;
+        color: #AA1922;
+        display: inline-block;
+        width: 30%;
+        
+    }
+    
+    .field-label
+    {
+        display: inline-block;
+        width: 50%;
+    }
+    
+    .field-edit
+    {
+        font-family: 'Abel', sans-serif;
+        display: inline-block;
+        width 20%;
+    }
+    
+    .field-edit a
+    {
+        text-transform: uppercase;
+        font-size: 85%;
+        text-decoration: none;
+        color: #FFF;
+        background-color: #AA1922;
+        padding: 10px;
+    }
+    
+    .field-edit a:hover
+    {
+        color: #AA1922;   
+    }
+    
+    /* /Profil */
 }
