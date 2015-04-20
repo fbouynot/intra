@@ -2,15 +2,22 @@
 
     function changePwd($oldPwd, $newPwd, $verifPwd)
     {
+        /* Racine de la recherche */
         $dn = "OU=RH,DC=oiio,DC=loc";
+        /* Nom de compte recherché */
         $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
-        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Couldn't connect to AD!");
+        /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
+        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        /* Options pour le LDAP */
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
+        /* Connexion en tant qu'utilisateur */
         if ($bd = @ldap_bind($ad, $_SESSION['userName'] . "@oiio.loc", $oldPwd))
         {
+            /* On récupère le nombre de mauvais mot de passe entrés et le chemin complet de l'utilisateur */
             $result = ldap_search($ad,$dn,$filter,array("badpwdcount", "dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
             $result = ldap_get_entries($ad, $result);
+            /* On vérifie que les mauvais mot de passe sont inferieurs à 3 */
             if ($result[0]['badpwdcount'][0] == 3)
             {
                 echo "Compte bloqué. Veuillez contacter votre administrateur systèmes.";
@@ -43,6 +50,7 @@
             }
             else
             {
+                /* Préparation de la requête. */
                 $entry = array(
                     array(
                         "attrib"  => "unicodePwd",
@@ -55,7 +63,7 @@
                         "values"  => array(iconv("UTF-8", "UTF-16LE", '"' . $newPwd . '"'))
                     )
                 );
-                
+                /* Changement du mot de passe */
                 if (!ldap_modify_batch($ad, $result[0]['dn'], $entry))
                 {
                     echo "Votre mot de passe ne peut pas être changé. Contactez votre administrateur systèmes.";
@@ -77,39 +85,33 @@
 
     function changeMail ($newMail)
     {
+        /* On vérifie que l'adresse mail est correctement formatée. */
         if (!filter_var($newMail, FILTER_VALIDATE_EMAIL))
         {
             echo "Adresse mail incorrecte";
             return false;
         }
+        /* Racine de la recherche */
         $dn = "OU=RH,DC=oiio,DC=loc";
+        /* Nom de compte recherché */
         $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
-        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Couldn't connect to AD!");
+        /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
+        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
-        if ($bd = @ldap_bind($ad, $_SESSION['userName'] . "@oiio.loc", $_SESSION['userPwd']))
+        /* Recuperer le mot de passe */
+        $file = fopen("d:\LDAP\aaa.exe","r");
+        $pwd = fgets($file);
+        fclose($file);
+        /* Connexion en tant qu'Administrateur, nécessaire au changement de mail */
+        if ($bd = @ldap_bind($ad, Administrateur . "@oiio.loc", $pwd))
         {
-            $addn = ldap_search($ad,$dn,$filter,array("badpwdcount", "dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
+            /* On récupère le dn (chemin complet objet compris) necesaire à la requête */
+            $addn = ldap_search($ad,$dn,$filter,array("dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
             $addn = ldap_get_entries($ad, $addn);
-            $result = ldap_search($ad,$dn,$filter,array("mail")) or die ("Erreur de recherche  : " . ldap_error($ad));
-            $result = ldap_get_entries($ad, $result);
-            var_dump($result[0]['mail'][0]);
-            $entry = array(/*
-            array(
-                "attrib"  => "mail",
-                "modtype" => LDAP_MODIFY_BATCH_REMOVE,
-                "values"  => array('"' . $result[0]['mail'][0] . '"')
-                ),*/
-            array(
-                "attrib"  => "mail",
-                "modtype" => LDAP_MODIFY_BATCH_REPLACE,
-                "values"  => array('"' . $newMail . '"')
-                )
-            );
-            var_dump($ad);
-            var_dump($addn[0]['dn']);
-            var_dump($entry);
-        ldap_modify_batch($ad, $addn[0]['dn'], $entry);
+            /* On change le mail */
+            ldap_modify($ad, $addn[0]['dn'], array("mail" => array($newMail)));
+            $_SESSION['userMail'] = $newMail;
         }
         ldap_unbind($ad);
     }
