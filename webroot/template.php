@@ -32,6 +32,7 @@
                     {
                 ?>
                 <li><a href='<?php echo BASE_URL . "/profile";?>'><?php echo $_SESSION['givenName'];?></a></li>
+                <li><a href='<?php echo BASE_URL . "/disconnect";?>'>Déconnexion</a></li>
                 <?php       
                     }
                 ?>
