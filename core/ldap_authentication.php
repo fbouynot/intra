@@ -12,7 +12,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         /* Les attributs recherchés : mail, nom, prenom, login */
         $attr = array("mail", "sn", "givenname", "samaccountname");
         /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
-        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
         /* Connexion à l'AD avec les identifiants de l'utilisateur. Si c'est accepté, on connecte l'utilsateur. */

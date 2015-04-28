@@ -7,7 +7,7 @@
         /* Nom de compte recherché */
         $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
         /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
-        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         /* Options pour le LDAP */
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
@@ -96,7 +96,48 @@
         /* Nom de compte recherché */
         $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
         /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
-        $ad = @ldap_connect("ldaps://cd2.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
+        /* Recuperer le mot de passe */
+        $file = fopen("d:\LDAP\aaa.exe","r");
+        $pwd = fgets($file);
+        fclose($file);
+        /* Connexion en tant qu'Administrateur, nécessaire au changement de mail */
+        if ($bd = @ldap_bind($ad, Administrateur . "@oiio.loc", $pwd))
+        {
+            /* On récupère le dn (chemin complet objet compris) necesaire à la requête */
+            $addn = ldap_search($ad,$dn,$filter,array("dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
+            $addn = ldap_get_entries($ad, $addn);
+            /* On change le mail */
+            ldap_modify($ad, $addn[0]['dn'], array("mail" => array($newMail)));
+            $_SESSION['userMail'] = $newMail;
+        }
+        ldap_unbind($ad);
+    }
+
+    function changePhone ($number)
+    {
+            
+        // If you want to clean the variable so that only + - . and 0-9 can be in it you can:
+        $number = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
+
+        // If you want to clean it up manually you can:
+        $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
+
+        // If you want to check the length of the phone number and that it's valid you can:
+        if(strlen($_POST['phone']) === 10) {
+            if (!preg_match('/^[0-9]$/',$var)) {
+                echo "Numéro de téléphone incorrect.";
+                return false;
+            }
+        }
+        /* Racine de la recherche */
+        $dn = "OU=RH,DC=oiio,DC=loc";
+        /* Nom de compte recherché */
+        $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
+        /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
+        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
         /* Recuperer le mot de passe */
