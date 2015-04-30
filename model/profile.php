@@ -123,11 +123,11 @@
         $number = filter_var($number, FILTER_SANITIZE_NUMBER_INT);
 
         // If you want to clean it up manually you can:
-        $phone = preg_replace('/[^0-9]/', '', $_POST['phone']);
+        $phone = preg_replace('/[^0-9]/', '', $number);
 
         // If you want to check the length of the phone number and that it's valid you can:
-        if(strlen($_POST['phone']) === 10) {
-            if (!preg_match('/^[0-9]$/',$var)) {
+        if(strlen($number) === 10) {
+            if (!preg_match('/^[0-9]{10}$/',$number)) {
                 echo "Numéro de téléphone incorrect.";
                 return false;
             }
@@ -151,8 +151,8 @@
             $addn = ldap_search($ad,$dn,$filter,array("dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
             $addn = ldap_get_entries($ad, $addn);
             /* On change le mail */
-            ldap_modify($ad, $addn[0]['dn'], array("mail" => array($newMail)));
-            $_SESSION['userMail'] = $newMail;
+            ldap_modify($ad, $addn[0]['dn'], array("homePhone" => array($phone)));
+            $_SESSION['userPhone'] = $phone;
         }
         ldap_unbind($ad);
     }

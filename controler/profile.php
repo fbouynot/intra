@@ -17,9 +17,13 @@ else
         changeMail($_POST['userMail']);
     }
     /* Si l'utilisateur a rempli le formulaire de changement de mot passe, on change le mot de passe */
-    if (isset($_POST['userPwd']) && isset($_POST['newPwd']) && isset($_POST['verifPwd']) && !($_POST['userPwd'] == "") && !($_POST['newPwd'] == "") && !($_POST['verifPwd'] == ""))
+    else if (isset($_POST['userPwd']) && isset($_POST['newPwd']) && isset($_POST['verifPwd']) && !($_POST['userPwd'] == "") && !($_POST['newPwd'] == "") && !($_POST['verifPwd'] == ""))
     {
         changePwd($_POST['userPwd'],$_POST['newPwd'],$_POST['verifPwd']);
+    }
+    else if (isset($_POST['userPhone']) && !($_POST['userPhone'] == ""))
+    {
+        changePhone($_POST['userPhone']);
     }
 
     include_once(ROOT . "/view/profile.php");
