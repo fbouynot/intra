@@ -1,5 +1,7 @@
 <?php 
     
+    $title = "Réinitialisation du mot de passe";
+
     // Est-ce que l'utilisateur vient de soumettre le formulaire email ?
     if (!isset($POST['mailRecup']) || $POST['mailRecup'] == "")
     {

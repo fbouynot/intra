@@ -1,5 +1,7 @@
 <?php
 
+$title = "Profil";
+
 /* Si l'utilisateur n'est pas connecté, on le redirige sur la page de connexion et on prépare une variable pour le ramener ici ensuite */
 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 {
@@ -20,9 +22,5 @@ else
         changePwd($_POST['userPwd'],$_POST['newPwd'],$_POST['verifPwd']);
     }
 
-    /*@$sn = $result[0]['sn'][0];
-    $givenName = $result[0]['givenname'][0];
-    @$mail = $result[0]['mail'][0];
-*/
     include_once(ROOT . "/view/profile.php");
 }

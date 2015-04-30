@@ -11,7 +11,7 @@
         <!--Cette partie sera supprimée-->
         <link href='http://fonts.googleapis.com/css?family=Abel|Poiret+One' rel='stylesheet' type='text/css'>
         <!--/ Cette partie sera supprimée-->
-		<title>OIIO Formation - Intranet</title>
+		<title>OIIO Formation - Intranet - <?php echo $title;?></title>
 	</head>
     <body>
         <nav>
