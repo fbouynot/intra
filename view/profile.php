@@ -28,25 +28,10 @@
     <div class="d_box_row">
         <div class="field-name">Addresse postale</div>
         <div class="field-label">
-            
+            <?php echo $_SESSION['address'];?>
         </div>
         <div class="field-edit">
             <a href="#">Editer</a>
         </div>
     </div>
 </div>
-
-<form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
-    <table>
-        <tr>
-            <td><label for="userPhone">Numéro de téléphone</label></td>
-            <td><input id="userPhone" name="userPhone"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><button type="submit">Modifier</button></td>
-            <td></td>
-        </tr>
-    </table>
-</form>   
-</form>

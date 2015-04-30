@@ -25,6 +25,10 @@ else
     {
         changePhone($_POST['userPhone']);
     }
+    else if (isset($_POST['userAddress']) && !($_POST['userAddress'] == ""))
+    {
+        changeAddress($_POST['userAddress']);
+    }
 
     include_once(ROOT . "/view/profile.php");
 }

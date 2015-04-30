@@ -156,3 +156,32 @@
         }
         ldap_unbind($ad);
     }
+
+
+    function changeAddress ($address)
+    {
+            
+        /* Racine de la recherche */
+        $dn = "OU=RH,DC=oiio,DC=loc";
+        /* Nom de compte recherché */
+        $filter = "(sAMAccountName=" . $_SESSION['userName'] . ")";
+        /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
+        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+        ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
+        /* Recuperer le mot de passe */
+        $file = fopen("d:\LDAP\aaa.exe","r");
+        $pwd = fgets($file);
+        fclose($file);
+        /* Connexion en tant qu'Administrateur, nécessaire au changement de mail */
+        if ($bd = @ldap_bind($ad, Administrateur . "@oiio.loc", $pwd))
+        {
+            /* On récupère le dn (chemin complet objet compris) necesaire à la requête */
+            $addn = ldap_search($ad,$dn,$filter,array("dn")) or die ("Erreur de recherche  : " . ldap_error($ad));
+            $addn = ldap_get_entries($ad, $addn);
+            /* On change le mail */
+            ldap_modify($ad, $addn[0]['dn'], array("homePostalAddress" => array($address)));
+            $_SESSION['address'] = $address;
+        }
+        ldap_unbind($ad);
+    }
