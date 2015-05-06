@@ -181,7 +181,7 @@
             $addn = ldap_get_entries($ad, $addn);
             /* On change le mail */
             ldap_modify($ad, $addn[0]['dn'], array("homePostalAddress" => array($address)));
-            $_SESSION['address'] = $address;
+            $_SESSION['userAddress'] = $address;
         }
         ldap_unbind($ad);
     }

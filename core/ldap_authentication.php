@@ -10,7 +10,7 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         /* Ce que l'on cherche */
         $filter = "(sAMAccountName=" . $_POST['userName'] . ")";
         /* Les attributs recherchés : mail, nom, prenom, login */
-        $attr = array("mail", "sn", "givenname", "samaccountname");
+        $attr = array("mail", "sn", "givenname", "samaccountname", "homePhone", "homePostalAddress");
         /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
         $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
@@ -27,8 +27,9 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
             $_SESSION["connected"] = true;
             $_SESSION["userName"] = $_POST["userName"];
             $_SESSION["userPwd"] = $_POST["userPwd"];
+            @$_SESSION["userPhone"] = $result[0]['homephone'][0];
+            @$_SESSION["userAddress"] = $result[0]['homepostaladdress'][0];
         }
-        var_dump($bd);
         /* Deconnexion de l'AD. */
         ldap_unbind($ad);
     }

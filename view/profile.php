@@ -28,7 +28,7 @@
     <div class="d_box_row">
         <div class="field-name">Addresse postale</div>
         <div class="field-label">
-            <?php echo $_SESSION['address'];?>
+            <?php echo $_SESSION['userAddress'];?>
         </div>
         <div class="field-edit">
             <a href="#">Editer</a>
