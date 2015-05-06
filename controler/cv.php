@@ -2,4 +2,4 @@
 
     $title = "CV";
 
-    include_once(ROOT . "/view/index.php");
+    include_once(ROOT . "/view/cv.php");
