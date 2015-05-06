@@ -90,8 +90,7 @@ section
 {
     padding-top: 50px;
     padding-bottom: 30px;
-    min-height: 100%;
-    vertical-align: middle;
+    height: 100%;
     box-sizing: border-box;
 }
 
@@ -267,10 +266,12 @@ footer a
     
     .d_box /* display box for the profil page */
     {
-        width: 800px;
-        /*margin-top: 30px;*/
+        position: relative;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .d_box_row /* each line of the display box */
@@ -350,8 +351,8 @@ footer a
         padding: 8px 8px 8px 8px;
         border-radius: 2px;
         background: #fff;
-        margin-left:auto;
-        margin-right:auto;
+        margin-left: auto;
+        margin-right: auto;
         top: 50%;
         transform: translateY(-50%);
     }
