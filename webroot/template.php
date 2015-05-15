@@ -17,7 +17,6 @@
         <nav>
             <ul>
                 <li class="active"><a href='<?php echo BASE_URL;?>/'>Accueil</a></li>
-                <li><a href='<?php echo BASE_URL . "/cv";?>'>CV</a></li>
                 
                 <?php
                     /*  Si l'utilisateur n'est pas connecté, on lui propose un formulaire de connexion, sinon on lui affiche un menu personnel */
@@ -31,6 +30,7 @@
                     else
                     {
                 ?>
+                <li><a href='<?php echo BASE_URL . "/cv";?>'>CV</a></li>
                 <li><a href='<?php echo BASE_URL . "/profile";?>'><?php echo $_SESSION['givenName'];?></a></li>
                 <li><a href='<?php echo BASE_URL . "/disconnect";?>'>Déconnexion</a></li>
                 <?php       
