@@ -310,13 +310,14 @@ footer a
         font-size: 85%;
         text-decoration: none;
         color: #FFF;
+        transition: .3s background-color;
         background-color: #AA1922;
         padding: 10px;
     }
     
     .field-edit a:hover
     {
-        color: #AA1922;   
+        background-color: #F82E3B;   
     }
     
     /* /Profil */
@@ -360,7 +361,6 @@ footer a
     /* /Popup */
     
     /* cv */
-    
     .center {
         position: relative;
         margin-left: auto;
