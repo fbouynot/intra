@@ -133,7 +133,7 @@ footer a
     border: none;
     font-family: sans-serif;
     text-transform: uppercase;
-    box-shadow:  0px 0px 0px 1px #AA1922;
+    /*box-shadow:  0px 0px 0px 1px #AA1922;*/
     line-height: 2;
     
     padding-left: 5px; /* WIP */
@@ -184,6 +184,9 @@ footer a
     border-color: lightgrey;
     
     transition: .3s border-color;
+    
+    /* Fix padding issue with input */
+    box-sizing: border-box;
     /* /WIP */
 }
 
