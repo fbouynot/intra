@@ -32,6 +32,7 @@ nav ul
 
 nav li
 {
+    display: inline-block;
     font-family: sans-serif;
     font-size: 1.2em;
     line-height: 40px;
@@ -44,7 +45,7 @@ nav a
     color: #AA1922;
     display: block;
     padding-left: 15px;
-    border-bottom: 1px solid #888;
+    border-bottom: medium none;
 }
 
 nav a.active
@@ -185,6 +186,50 @@ footer a
 }
 
 /* /Login */
+/* Profile */
+.d_box /* Display box for the profile page */
+{
+    margin-top: 50px;
+    
+}
+/* /Profile */
+/* Popup 
+    .edition
+    {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        z-index: -999;
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.8);
+        transition: opacity 200ms ease-in;
+    }
+    
+    .edition:target
+    {
+        z-index: 999;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .edition > div {
+        max-width: 400px;
+        position: relative;
+        padding: 8px 8px 8px 8px;
+        border-radius: 2px;
+        background: #fff;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+     /Popup */
 
 /* != for computer screens */
 @media screen and (min-width: 1024px)
@@ -317,6 +362,7 @@ footer a
     /* Popup */
     .edition
     {
+        /* WIP */
         position: fixed;
         height: 100%;
         top: 0;
@@ -327,8 +373,8 @@ footer a
         z-index: -999;
         opacity: 0;
         pointer-events: none;
-        background: rgba(0, 0, 0, 0.8);
-        transition: opacity 200ms ease-in;
+        /*background: rgba(0, 0, 0, 0.8);
+        transition: box-shadow 200ms ease-in;*/
     }
     
     .edition:target
@@ -348,6 +394,25 @@ footer a
         margin-right: auto;
         top: 50%;
         transform: translateY(-50%);
+        box-shadow: 0px 0px 20px 10px #656565;
+            -moz-box-shadow: 0px 0px 20px 10px #656565;
+            -webkit-box-shadow: 0px 0px 20px 10px #656565;
+            -o-box-shadow: 0px 0px 20px 10px #656565;
+    }
+    
+    .edition label
+    {
+           
+    }
+    
+    .edition input
+    {
+        
+    }
+    
+    .edition button
+    {
+        
     }
     
     /* /Popup */

@@ -35,6 +35,10 @@
         </div>
     </div>
 </div>
+
+<!--Edition-->
+
+<!--Email-->
 <div id="email" class="edition">
     <div>
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
@@ -45,6 +49,8 @@
         </form>
     </div>
 </div>
+
+<!--Pwd-->
 <div id="pwd" class="edition">
     <div>
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
@@ -59,6 +65,8 @@
         </form>
     </div>
 </div>
+
+<!--Phone-->
 <div id="phone" class="edition">
     <div>
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
@@ -69,6 +77,8 @@
         </form>
     </div>
 </div>
+
+<!--Address-->
 <div id="address" class="edition">
     <div>
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
