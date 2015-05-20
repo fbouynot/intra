@@ -276,6 +276,7 @@ footer a
         color: #AA1922;
         display: inline-block;
         width: 30%;
+        vertical-align: middle;
         
     }
     
@@ -283,6 +284,7 @@ footer a
     {
         display: inline-block;
         width: 50%;
+        vertical-align: middle;
     }
     
     .field-edit
@@ -290,6 +292,8 @@ footer a
         font-family: 'Abel', sans-serif;
         display: inline-block;
         width 20%;
+        vertical-align: middle;
+        margin-left: 20px;
     }
     
     .field-edit a
