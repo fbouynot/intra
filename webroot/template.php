@@ -63,5 +63,4 @@
             <a href="http://www.oiioformation.fr">OIIO Formation</a>
         </footer>
     </body>
-    <script src="<?php echo BASE_URL;?>/js/jquery-2.1.3.min.js"></script>
 </html>
