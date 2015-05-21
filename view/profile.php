@@ -45,8 +45,8 @@
             <label for="userMail">Adresse mail</label>
             <input id="userMail" name="userMail">
             <button class="button-apply" type="submit">Appliquer</button>
-            <a href="#">
-                <button class="button-cancel">Annuler</button>
+            <a class="button-cancel" href="#">
+                x
             </a>
         </form>
     </div>
@@ -63,8 +63,8 @@
             <label for="verifPwd">Confirmation du mot de passe</label>
             <input id="verifPwd" name="verifPwd">
             <button class="button-apply" type="submit">Appliquer</button>
-            <a href="#">
-                <button class="button-cancel">Annuler</button>
+            <a class="button-cancel" href="#">
+                x
             </a>
         </form>
     </div>
@@ -77,8 +77,8 @@
             <label for="userPhone">Téléphone</label>
             <input id="userPhone" name="userPhone">
             <button class="button-apply" type="submit">Appliquer</button>
-            <a href="#">
-                <button class="button-cancel">Annuler</button>
+            <a class="button-cancel" href="#">
+                x
             </a>
         </form>
     </div>
@@ -91,8 +91,8 @@
             <label for="userAddress">Adresse</label>
             <input id="userAddress" name="userAddress">
             <button class="button-apply" type="submit">Appliquer</button>
-            <a href="#">
-                <button class="button-cancel">Annuler</button>
+            <a class="button-cancel" href="#">
+                x
             </a>
         </form>
     </div>

@@ -387,7 +387,7 @@ footer a
     .edition > div {
         max-width: 400px;
         position: relative;
-        padding: 8px 8px 8px 8px;
+        padding: 20px;
         border-radius: 0px;
         background: #fff;
         margin-left: auto;
@@ -403,6 +403,7 @@ footer a
     .edition label
     {
         display: block;
+        margin-top: 20px;
         font-family: 'Abel', sans-serif;
         text-transform: uppercase;
         color: #AA1922;
@@ -412,6 +413,7 @@ footer a
     {
         display: block;
         width: 100%;
+        margin-top: 5px;
         padding: 0;
         line-height: 2;
         background-color: #FFF !important;
@@ -444,6 +446,12 @@ footer a
     
     .edition .button-apply
     {
+        display: block;
+        vertical-align: middle;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        
         text-transform: uppercase;
         font-family: 'Abel';
         font-size: 85%;
@@ -458,7 +466,16 @@ footer a
     {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.64);
+        transition: .3s color;
+        font-size: 30px;
+    }
+    
+    .edition .button-cancel:hover
+    {
+        color: black;
     }
     
     /* /Popup */
