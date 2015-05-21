@@ -3,7 +3,7 @@
 /* Si l'utilisateur n'est pas déjà considéré comme connecté mais que ses identifiants et mot de passe sont disponibles, on tente de le connecter via l'AD */
 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 {
-    if((isset($_POST["userName"]) == true) && (isset($_POST["userPwd"]) == true))
+    if((isset($_POST["userName"]) == true) && $_POST["userName"] != "" && (isset($_POST["userPwd"]) == true))
     {
         /* La raçine de notre recherche */
         $dn = "OU=RH,DC=oiio,DC=loc";
