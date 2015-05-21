@@ -402,17 +402,29 @@ footer a
     
     .edition label
     {
-           
+        display: block;   
     }
     
     .edition input
     {
-        
+        display: block;
+        width: 100%;
+        padding: 0px;
     }
     
     .edition button
     {
         
+    }
+    
+    .edition button-apply
+    {
+        float: left;
+    }
+    
+    .edition > a > button-cancel
+    {
+        float: right;
     }
     
     /* /Popup */

@@ -44,8 +44,10 @@
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
             <label for="userMail">Adresse mail</label>
             <input id="userMail" name="userMail">
-            <button type="submit">Appliquer</button>
-            <a href="#"><button>Annuler</button></a>
+            <button class="button-apply" type="submit">Appliquer</button>
+            <a href="#">
+                <button class="button-cancel">Annuler</button>
+            </a>
         </form>
     </div>
 </div>
@@ -60,8 +62,10 @@
             <input id="newPwd" name="newPwd">
             <label for="verifPwd">Confirmation du mot de passe</label>
             <input id="verifPwd" name="verifPwd">
-            <button type="submit">Appliquer</button>
-            <a href="#"><button>Annuler</button></a>
+            <button class="button-apply" type="submit">Appliquer</button>
+            <a href="#">
+                <button class="button-cancel">Annuler</button>
+            </a>
         </form>
     </div>
 </div>
@@ -72,8 +76,10 @@
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
             <label for="userPhone">Téléphone</label>
             <input id="userPhone" name="userPhone">
-            <button type="submit">Appliquer</button>
-            <a href="#"><button>Annuler</button></a>
+            <button class="button-apply" type="submit">Appliquer</button>
+            <a href="#">
+                <button class="button-cancel">Annuler</button>
+            </a>
         </form>
     </div>
 </div>
@@ -84,8 +90,10 @@
         <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
             <label for="userAddress">Adresse</label>
             <input id="userAddress" name="userAddress">
-            <button type="submit">Appliquer</button>
-            <a href="#"><button>Annuler</button></a>
+            <button class="button-apply" type="submit">Appliquer</button>
+            <a href="#">
+                <button class="button-cancel">Annuler</button>
+            </a>
         </form>
     </div>
 </div>
