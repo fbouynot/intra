@@ -124,7 +124,7 @@ footer a
 .login button:hover
 {
     background-color: #F82E3B;
-    box-shadow: 0px 0px 0px 1px #F82E3B;
+    /*box-shadow: 0px 0px 0px 1px #F82E3B;*/
 }
 
 .login a
@@ -388,7 +388,7 @@ footer a
         max-width: 400px;
         position: relative;
         padding: 8px 8px 8px 8px;
-        border-radius: 2px;
+        border-radius: 0px;
         background: #fff;
         margin-left: auto;
         margin-right: auto;
@@ -402,14 +402,34 @@ footer a
     
     .edition label
     {
-        display: block;   
+        display: block;
+        font-family: 'Abel', sans-serif;
+        text-transform: uppercase;
+        color: #AA1922;
     }
     
     .edition input
     {
         display: block;
         width: 100%;
-        padding: 0px;
+        padding: 0;
+        line-height: 2;
+        background-color: #FFF !important;
+        padding-left: 5px;
+        border: solid 1px;
+        border-color: lightgrey;
+        transition: .3s border-color;
+        
+        /* Fix padding issue with input */
+        box-sizing: border-box; 
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        /* /Fix */
+    }
+
+    .edition input:hover
+    {
+        border-color: black; 
     }
     
     .edition button
@@ -417,14 +437,28 @@ footer a
         
     }
     
-    .edition button-apply
+    .edition button:hover
     {
-        float: left;
+        background-color: #F82E3B;
     }
     
-    .edition > a > button-cancel
+    .edition .button-apply
     {
-        float: right;
+        text-transform: uppercase;
+        font-family: 'Abel';
+        font-size: 85%;
+        color: #FFF;
+        transition: .3s background-color;
+        background-color: #AA1922;
+        border: none;
+        line-height: 2;
+    }
+    
+    .edition .button-cancel
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
     
     /* /Popup */
