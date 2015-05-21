@@ -1,5 +1,5 @@
 <div class="center">    
-    <form method="post" action="cv.php" enctype="multipart/form-data">
+    <form method="post" action="<?php echo BASE_URL;?>/cv" enctype="multipart/form-data">
 
         <label for="cv">Votre CV</label>
         <input name="MAX_FILE_SIZE" type="hidden" value="10000000">
