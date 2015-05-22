@@ -14,14 +14,14 @@ elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
 
     if ($_FILES['cv']['error'] > 0)
     {
-        echo "Erreur lors du transfert, veuillez recommencer l'opération.";
+        $message = "Erreur lors du transfert, veuillez recommencer l'opération.";
         //echo $_FILES['cv']['error'];
     }
     else
     {
         if ($_FILES['cv']['size'] > $_maxSize)
         {
-            echo "Le fichier est trop volumineux. La taille maximale acceptée est {$_maxSize} octets.";
+            $message = "Le fichier est trop volumineux. La taille maximale acceptée est {$_maxSize} octets.";
             //echo $erreur;
         }
         else
@@ -34,7 +34,7 @@ elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
 
             if ( !in_array($extension_upload,$extensions_valides) )
             {
-                echo "Extension incorrecte. Les extensions acceptées sont : pdf, doc, docx, odt, rtf, pages";
+                $message = "Extension incorrecte. Les extensions acceptées sont : pdf, doc, docx, odt, rtf, pages";
             }
             else
             {
@@ -45,7 +45,7 @@ elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
                 if ( !file_exists ( ROOT . "/upload/{$_nom}_{$_prenom}" ) ) mkdir(ROOT . "/upload/{$_nom}_{$_prenom}/", 0733, true);
                 $nom = ROOT . "/upload/{$_nom}_{$_prenom}/{$_nom}_{$_prenom}.{$extension_upload}";
                 $resultat = move_uploaded_file($_FILES['cv']['tmp_name'],$nom);
-                if ($resultat) echo nl2br("Transfert réussi.");
+                if ($resultat) $message = nl2br("Transfert réussi.");
             }
         }
     }

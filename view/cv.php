@@ -1,3 +1,16 @@
+<?php
+
+if (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
+{
+    ?>
+<div class="center">
+    <?php echo $message;?>
+</div>
+<?php
+}
+else
+{
+    ?>
 <div class="center">
     <div class="wrapper">
         <form method="post" action="<?php echo BASE_URL . '/cv';?>" enctype="multipart/form-data">
@@ -10,3 +23,5 @@
         </form>
     </div>    
 </div>
+<?php
+}
