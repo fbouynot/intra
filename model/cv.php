@@ -16,6 +16,8 @@ function uploadCv($cv)
 
 function getCv()
 {
+    global $bdd;
+    
     $req = $bdd->prepare("SELECT cv_e FROM user WHERE login=:login;");
     $req->bindParam(':login', $_SESSION['userName'], PDO::PARAM_STR,64);
     $req->execute();

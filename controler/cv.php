@@ -8,11 +8,11 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
     $_SESSION['prelogin'] = $_GET['p'];
     header("Location: " . BASE_URL . "/login");
 }
-elseif (isset($_POST['cv']) == true && $_POST['cv'] != "")
+elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
 {
     include_once(ROOT . "/model/cv.php");
-    var_dump($_GET);
-    uploadCv($_POST['cv']);
+    var_dump($_FILES);
+    uploadCv($_FILES['cv']);
     include_once(ROOT . "/view/cv.php");
 }
 else
@@ -21,3 +21,4 @@ else
     //getCv();
     include_once(ROOT . "/view/cv.php");
 }
+
