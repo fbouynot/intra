@@ -5,7 +5,7 @@
     <table>
         <tr>
             <td><label for="userName">Nom d'utilisateur</label></td>
-            <td><input id="userName" name="userName"></td>
+            <td><input id="userName" name="userName" autofocus></td>
         </tr>
         <tr>
             <td><label for="userPwd">Mot de passe</label></td>

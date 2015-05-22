@@ -1,2 +1,2 @@
 <?php
-    echo "<p>Hello world !</p>";
+    echo "<article><p>Hello world !</p></article>";

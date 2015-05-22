@@ -15,7 +15,7 @@
 	</head>
     <body>
         <nav>
-            <div class="test123">
+            <div>
                 <ul>
                     <li class="active">
                         <a href='<?php echo BASE_URL . "/";?>'>Accueil</a>
