@@ -11,7 +11,6 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
 {
     include_once(ROOT . "/model/cv.php");
-    var_dump($_FILES);
     $_maxSize = 10000000;
 
     if ($_FILES['cv']['error'] > 0)
@@ -43,11 +42,11 @@ elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
                 $_prenom = mb_strtolower($_SESSION['givenName'], 'UTF-8');
                 $_prenom = ucwords($_prenom);
                 $_nom = mb_strtoupper($_SESSION['sn'], 'UTF-8');
-                if ( !file_exists ( BASE_URL . "/cv/" ) ) mkdir(BASE_URL . '/cv/', 0733, true);
-                if ( !file_exists ( BASE_URL . "/cv/{$_nom}_{$_prenom}" ) ) mkdir(BASE_URL . "/cv/{$_nom}_{$_prenom}/", 0733, true);
-                $nom = BASE_URL . "/cv/{$_nom}_{$_prenom}/{$_nom}_{$_prenom}.{$extension_upload}";
+                if ( !file_exists ( ROOT . "/upload/" ) ) mkdir(ROOT . '/upload/', 0733, true);
+                if ( !file_exists ( ROOT . "/upload/{$_nom}_{$_prenom}" ) ) mkdir(ROOT . "/upload/{$_nom}_{$_prenom}/", 0733, true);
+                $nom = ROOT . "/upload/{$_nom}_{$_prenom}/{$_nom}_{$_prenom}.{$extension_upload}";
                 $resultat = move_uploaded_file($_FILES['cv']['tmp_name'],$nom);
-                if ($resultat) echo nl2br("Transfert réussi à l'emplacement {$nom}");
+                if ($resultat) echo nl2br("Transfert réussi.");
             }
         }
     }
