@@ -10,7 +10,6 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 }
 elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
 {
-    include_once(ROOT . "/model/cv.php");
     $_maxSize = 10000000;
 
     if ($_FILES['cv']['error'] > 0)
@@ -50,11 +49,10 @@ elseif (isset($_FILES['cv']) == true && $_FILES['cv'] != "")
             }
         }
     }
-    include_once(ROOT . "/view/cv.php");
 }
 else
 {
-    include_once(ROOT . "/model/cv.php");
     //getCv();
-    include_once(ROOT . "/view/cv.php");
 }
+
+include_once(ROOT . "/view/cv.php");
