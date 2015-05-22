@@ -503,6 +503,17 @@ footer a
         display: block;
     }
     
+    #input-file
+    {
+        pointer-events: none;
+        display: none;
+    }
+    
+    #button-input-file
+    {
+        height: 50px;
+        width: 50px;
+    }
     
     /* /cv */
 }
