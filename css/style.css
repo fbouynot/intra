@@ -493,9 +493,9 @@ footer a
         max-width: 350px;
     }
     
-    .wrapper label
+    .wrapper .custom-input
     {
-        display: block;
+        display: inline-block;
     }
     
     .wrapper button
@@ -505,14 +505,10 @@ footer a
     
     #input-file
     {
-        pointer-events: none;
-        display: none;
-    }
-    
-    #button-input-file
-    {
-        height: 50px;
-        width: 50px;
+        /*pointer-events: none;*/
+        /*visibility: hidden;*/
+        position: fixed;
+        top: -100000px;
     }
     
     /* /cv */
