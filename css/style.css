@@ -61,8 +61,6 @@ nav li li
     font-size: .8em;
 }
 
-/* Connexion form&fildset */
-
 section
 {
     padding-top: 50px;
@@ -110,7 +108,6 @@ footer a
     border: none;
     font-family: sans-serif;
     text-transform: uppercase;
-    /*box-shadow:  0px 0px 0px 1px #AA1922;*/
     line-height: 2;
     
     padding-left: 5px; /* WIP */
@@ -119,7 +116,6 @@ footer a
 .login button:hover
 {
     background-color: #F82E3B;
-    /*box-shadow: 0px 0px 0px 1px #F82E3B;*/
 }
 
 .login a
@@ -153,20 +149,15 @@ footer a
     padding: 0;
     line-height: 2;
     background-color: #FFF !important;
-    
-    /* WIP */
     padding-left: 5px;
-    
     border: solid 1px;
     border-color: lightgrey;
-    
     transition: .3s border-color;
     
     /* Fix padding issue with input */
     box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
-    /* /WIP */
 }
 
 .login input:hover
@@ -450,13 +441,12 @@ footer a
         background-color: #F82E3B;
     }
     
-    .edition .button-apply
+    .button-apply
     {
         display: block;
         vertical-align: middle;
         margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 0;
         
         text-transform: uppercase;
         font-family: 'Abel';
@@ -468,7 +458,7 @@ footer a
         line-height: 2;
     }
     
-    .edition .button-cancel
+    .button-cancel
     {
         position: absolute;
         top: 0;
@@ -479,7 +469,7 @@ footer a
         font-size: 30px;
     }
     
-    .edition .button-cancel:hover
+    .button-cancel:hover
     {
         color: black;
     }
@@ -495,6 +485,24 @@ footer a
         transform: translateY(-50%);
         max-width: 600px;
     }
+    
+    .wrapper
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 350px;
+    }
+    
+    .wrapper label
+    {
+        display: block;
+    }
+    
+    .wrapper button
+    {
+        display: block;
+    }
+    
     
     /* /cv */
 }
