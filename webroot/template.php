@@ -5,7 +5,7 @@
             Pour la même raison, on demande d'être en zoom x1 au chargement de la page. -->
 		<meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
-            echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . '/css/style.css" />';
+            echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . 'css/style.css" />';
             echo '<link type="image/x-icon" href="' . BASE_URL . 'img/favico.ico" rel="shortcut icon" />';
         ?>
         <!--Cette partie sera supprimée-->
