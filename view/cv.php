@@ -18,7 +18,7 @@ else
             <label class="custom-input" for="input-file">
                 <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
                 <input id="input-file" type="file" name="cv" />
-                <div class="button-apply">Parcourir</div>
+                <div class="button-input-file">Parcourir</div>
             </label>    
             <button class="button-apply" type="submit" name="submit">Envoyer</button>
         </form>
