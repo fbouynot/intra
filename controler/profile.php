@@ -6,7 +6,7 @@ $title = "Profil";
 if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 {
     $_SESSION['prelogin'] = $_GET['p'];
-    header("Location: " . BASE_URL . "/login");
+    header("Location: " . BASE_URL . "login");
 }
 else
 {
