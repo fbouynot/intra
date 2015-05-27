@@ -9,5 +9,5 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
 }
 else
 {
-    header("Location: " . BASE_URL . "/" . $_SESSION['prelogin']);
+    header("Location: " . BASE_URL . $_SESSION['prelogin']);
 }
