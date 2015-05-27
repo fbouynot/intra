@@ -41,7 +41,7 @@
 <!--Email-->
 <div id="email" class="edition">
     <div>
-        <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
+        <form method="post" action="<?php echo BASE_URL;?>profile" enctype="multipart/form-data">
             <label for="userMail">Adresse mail</label>
             <input id="userMail" name="userMail">
             <button class="button-apply" type="submit">Appliquer</button>
@@ -55,7 +55,7 @@
 <!--Pwd-->
 <div id="pwd" class="edition">
     <div>
-        <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
+        <form method="post" action="<?php echo BASE_URL;?>profile" enctype="multipart/form-data">
             <label for="userPwd">Mot de passe actuel</label>
             <input id="userPwd" name="userPwd">
             <label for="newPwd">Nouveau mot de passe</label>
@@ -73,7 +73,7 @@
 <!--Phone-->
 <div id="phone" class="edition">
     <div>
-        <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
+        <form method="post" action="<?php echo BASE_URL;?>profile" enctype="multipart/form-data">
             <label for="userPhone">Téléphone</label>
             <input id="userPhone" name="userPhone">
             <button class="button-apply" type="submit">Appliquer</button>
@@ -87,7 +87,7 @@
 <!--Address-->
 <div id="address" class="edition">
     <div>
-        <form method="post" action="<?php echo BASE_URL;?>/profile" enctype="multipart/form-data">
+        <form method="post" action="<?php echo BASE_URL;?>profile" enctype="multipart/form-data">
             <label for="userAddress">Adresse</label>
             <input id="userAddress" name="userAddress">
             <button class="button-apply" type="submit">Appliquer</button>
