@@ -6,7 +6,7 @@
 		<meta charset='utf-8' name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
             echo '<link rel="stylesheet" type="text/css" href="' . BASE_URL . '/css/style.css" />';
-            echo '<link type="image/x-icon" href="' . BASE_URL . '/img/favico.ico" rel="shortcut icon" />';
+            echo '<link type="image/x-icon" href="' . BASE_URL . 'img/favico.ico" rel="shortcut icon" />';
         ?>
         <!--Cette partie sera supprimée-->
         <link href='http://fonts.googleapis.com/css?family=Abel|Poiret+One' rel='stylesheet' type='text/css'>
@@ -18,7 +18,7 @@
             <div>
                 <ul>
                     <li class="active">
-                        <a href='<?php echo BASE_URL . "/";?>'>Accueil</a>
+                        <a href='<?php echo BASE_URL;?>'>Accueil</a>
                     </li>
                     <?php
                         /*  Si l'utilisateur n'est pas connecté, 
@@ -28,7 +28,7 @@
                         {
                     ?>
                     <li>
-                        <a href='<?php echo BASE_URL . "/login";?>'>Connexion</a>
+                        <a href='<?php echo BASE_URL . "login";?>'>Connexion</a>
                     </li>          
                     <?php
                         }
@@ -36,13 +36,13 @@
                         {
                     ?>
                     <li>
-                        <a href='<?php echo BASE_URL . "/cv";?>'>CV</a>
+                        <a href='<?php echo BASE_URL . "cv";?>'>CV</a>
                     </li>
                     <li>
-                        <a href='<?php echo BASE_URL . "/profile";?>'><?php echo $_SESSION['givenName'];?></a>
+                        <a href='<?php echo BASE_URL . "profile";?>'><?php echo $_SESSION['givenName'];?></a>
                     </li>
                     <li>
-                        <a href='<?php echo BASE_URL . "/disconnect";?>'>Déconnexion</a>
+                        <a href='<?php echo BASE_URL . "disconnect";?>'>Déconnexion</a>
                     </li>
                     <?php       
                         }
