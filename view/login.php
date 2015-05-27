@@ -1,7 +1,7 @@
 <!-- Formulaire de connexion -->
 <div class="login">
 <h2>Se connecter</h2>
-<form method="post" action="<?php echo BASE_URL;?>/login" enctype="multipart/form-data">
+<form method="post" action="<?php echo BASE_URL;?>login" enctype="multipart/form-data">
     <table>
         <tr>
             <td><label for="userName">Nom d'utilisateur</label></td>
