@@ -10,4 +10,4 @@ if(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true))
 }
 
 /* Redirection vers la page d'accueil */
-header("Location: " . BASE_URL . "/");
+header("Location: " . BASE_URL);
