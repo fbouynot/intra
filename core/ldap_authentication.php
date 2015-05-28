@@ -12,12 +12,15 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
         /* Les attributs recherchés : mail, nom, prenom, login */
         $attr = array("mail", "sn", "givenname", "samaccountname", "homePhone", "homePostalAddress");
         /* Connexion au LDAP de manière sécurisée (ldaps / port 636) */
-        $ad = @ldap_connect("ldaps://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+	echo "coucou<br>";
+        $ad = ldap_connect("ldap://cd1.oiio.loc",636) or die("Connexion à l'active directory impossible.");
+	echo "ad ok ?<br>";
         ldap_set_option($ad, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ad, LDAP_OPT_REFERRALS, 0);
         /* Connexion à l'AD avec les identifiants de l'utilisateur. Si c'est accepté, on connecte l'utilsateur. */
         if ($bd = ldap_bind($ad, $_POST['userName'] . "@oiio.loc", $_POST['userPwd']))
         {
+	echo "bind ok";
             $result = ldap_search($ad,$dn,$filter,$attr) or die ("Erreur de recherche  : " . ldap_error($ad));
             $result = ldap_get_entries($ad, $result);
             
@@ -30,6 +33,10 @@ if(!(isset($_SESSION["connected"]) && ($_SESSION["connected"] == true)))
             @$_SESSION["userPhone"] = $result[0]['homephone'][0];
             @$_SESSION["userAddress"] = $result[0]['homepostaladdress'][0];
         }
+	else
+	{
+		echo ldap_error($ad)."<br>";
+	}
         /* Deconnexion de l'AD. */
         ldap_unbind($ad);
     }
